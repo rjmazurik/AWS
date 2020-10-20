@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    b320efd1-7560-4027-953a-a632b1f0317d:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 360
+        'y': 200
+      z: 0
+      embeds: []
+      dependson:
+        - 7682acca-0b29-4815-8854-1673cbb233a1
+    7682acca-0b29-4815-8854-1673cbb233a1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 430
+        'y': 70
+      z: 0
+      embeds: []
+Resources:
+  EC2Test:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: ami-0528a5175983e7f28
+      AvailabilityZone: us-west-2c
+      InstanceType: t2.micro
+      KeyName: key-pair
+      SecurityGroups:
+        - !Ref EC2TestSecurityGroup
+      BlockDeviceMappings:
+        - DeviceName: /dev/sdh
+          Ebs:
+            VolumeType: io1
+            Iops: '200'
+            DeleteOnTermination: 'false'
+            VolumeSize: '100'
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              mkdir /mnt/xvdh
+            - |
+              mkfs -t ext4 /dev/xvdh
+            - |
+              echo "/dev/xvdh /mnt/xvdh ext4 defaults,nofail 0 2" >> /etc/fstab
+            - |
+              mount -a
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b320efd1-7560-4027-953a-a632b1f0317d
+    DependsOn:
+      - EC2TestSecurityGroup
+  EC2TestSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Allow SSH into EC2Tester
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7682acca-0b29-4815-8854-1673cbb233a1
