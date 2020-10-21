@@ -21,6 +21,6 @@ $ aws cloudformation create-stack --stack-name my-ec2-stack --template-body file
 ```
 $ aws cloudformation describe-stacks
 ```
-4. delete stack when done 
+4. delete stack when complete
 ```
 $ aws cloudformation delete-stack --stack-name my-ec2-stack
