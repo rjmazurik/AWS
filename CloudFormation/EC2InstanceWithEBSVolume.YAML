@@ -28,7 +28,7 @@ Resources:
       ImageId: ami-0528a5175983e7f28
       AvailabilityZone: us-west-2c
       InstanceType: t2.micro
-      KeyName: key-pair
+      KeyName: !Ref KeyName
       SecurityGroups:
         - !Ref EC2TestSecurityGroup
       BlockDeviceMappings:
