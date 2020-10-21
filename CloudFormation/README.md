@@ -15,7 +15,7 @@ $ git clone https://github.com/rjmazurik/AWS/blob/master/CloudFormation/EC2Insta
 ```
 2. create stack, append your created key pair for ParameterValue
 ```
-$ aws cloudformation create-stack --stack-name my-ec2-stack --template-body file://~\AWS\CloudFormation\EC2InstanceWithEBSVolume.YAML --parameters ParameterKey=KeyName,ParameterValue=key-pair
+$ aws cloudformation create-stack --stack-name my-ec2-stack --template-body file://~\AWS\CloudFormation\EC2InstanceWithEBSVolume.YAML --parameters ParameterKey=KeyName,ParameterValue=YourKeyPairHere
 ```
 3. List properties of all running stacks
 ```
