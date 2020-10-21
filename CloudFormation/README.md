@@ -11,7 +11,7 @@ The goal with this project was the creation and automation of common AWS service
 ## Setup
 1. Pull code 
 ```
-$ git clone https://github.com/rjmazurik/AWS/blob/master/CloudFormation/EC2InstanceWithEBSVolume.YAML 
+$ git clone https://github.com/rjmazurik/AWS 
 ```
 2. create stack, append your created key pair for ParameterValue
 ```
