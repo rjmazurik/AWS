@@ -28,7 +28,7 @@ Resources:
       ImageId: ami-0528a5175983e7f28
       AvailabilityZone: us-west-2c
       InstanceType: t2.micro
-      KeyName: !Ref KeyName
+      KeyName: cca-linux-key-pair
       SecurityGroups:
         - !Ref EC2TestSecurityGroup
       BlockDeviceMappings:
@@ -68,8 +68,3 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 7682acca-0b29-4815-8854-1673cbb233a1
-Parameters:
-  KeyName:
-    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
-    Type: 'AWS::EC2::KeyPair::KeyName'
-    ConstraintDescription: must be the name of an existing EC2 KeyPair.
