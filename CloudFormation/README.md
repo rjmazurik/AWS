@@ -15,7 +15,7 @@ $ git clone https://github.com/rjmazurik/AWS
 ```
 2. Create stack
 ```
-$ aws cloudformation create-stack --stack-name my-ec2-stack --template-body file://.\AWS\CloudFormation\EC2InstanceWithEBSVolume.YAML
+$ aws cloudformation create-stack --stack-name my-ec2-stack --template-body file://CloudFormation/EC2InstanceWithEBSVolume.YAML
 ```
 3. List properties of all running stacks
 ```
