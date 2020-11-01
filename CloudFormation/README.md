@@ -12,7 +12,6 @@ The goal with this project was the creation and automation of common AWS service
 0. configure aws account through CMD, specify default region name to us-west-2
 ```
 aws configure
-
 ```
 
 1. Pull code, cd to AWS directory 
@@ -31,7 +30,6 @@ $ aws cloudformation describe-stacks
 4. Delete stack when complete
 ```
 $ aws cloudformation delete-stack --stack-name my-ec2-stack
-
 ```
 ## Debugging 
 1. Access AWS IAM account https://aws.amazon.com/ 
