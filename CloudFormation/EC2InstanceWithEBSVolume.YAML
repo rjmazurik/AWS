@@ -13,7 +13,7 @@ Resources:
             VolumeType: io1
             Iops: '40'
             DeleteOnTermination: 'false'
-            VolumeSize: '1'
+            VolumeSize: '10'
       UserData: !Base64 
         'Fn::Join':
           - ''
