@@ -11,9 +11,9 @@ Resources:
         - DeviceName: /dev/sdh
           Ebs:
             VolumeType: io1
-            Iops: '200'
+            Iops: '40'
             DeleteOnTermination: 'false'
-            VolumeSize: '100'
+            VolumeSize: '1'
       UserData: !Base64 
         'Fn::Join':
           - ''
@@ -38,3 +38,6 @@ Resources:
           FromPort: '22'
           ToPort: '22'
           CidrIp: 0.0.0.0/0
+Outputs:
+  Description: EBS Volume ID 
+  Value: !Ref Ebs
