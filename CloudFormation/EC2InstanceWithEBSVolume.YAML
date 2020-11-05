@@ -41,4 +41,4 @@ Resources:
 Outputs:
   EBSVolumeID:
     Description: EBS Volume ID 
-    Value: !Ref BlockDeviceMappings
+    Value: !Ref Ebs
