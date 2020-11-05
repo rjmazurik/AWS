@@ -9,7 +9,7 @@ The goal with this project was the creation and automation of common AWS service
 * AWS CLI
 
 ## Setup
-0. configure aws account through CMD, specify default region name to us-west-2
+0. configure aws account from CMD, specify default region name to us-west-2
 ```
 aws configure
 ```
