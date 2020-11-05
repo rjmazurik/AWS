@@ -11,7 +11,6 @@ Resources:
         - DeviceName: /dev/sdh
           Ebs:
             VolumeType: gp2
-            Iops: '40'
             DeleteOnTermination: 'false'
             VolumeSize: '1'
       UserData: !Base64 
