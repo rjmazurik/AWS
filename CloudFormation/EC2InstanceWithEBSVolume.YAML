@@ -39,5 +39,6 @@ Resources:
           ToPort: '22'
           CidrIp: 0.0.0.0/0
 Outputs:
-  Description: EBS Volume ID 
-  Value: Ebs
+  EBSVolumeID:
+    Description: EBS Volume ID 
+    Value: !Ref BlockDeviceMappings
